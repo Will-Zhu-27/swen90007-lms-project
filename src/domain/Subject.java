@@ -1,5 +1,6 @@
 package domain;
 
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.*;
 
@@ -61,6 +62,9 @@ public class Subject {
 	
 		} catch (SQLException e) {
 	
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
         return subjects;
     }
@@ -72,6 +76,9 @@ public class Subject {
 			insertStatement.setString(3, coordinator.getName());
 			insertStatement.execute();
 		} catch (SQLException e) {
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return getSubjectCode();
 
